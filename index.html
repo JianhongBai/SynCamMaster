@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="SynCamMaster: Synchronizing Multi-Camera Video Generation from Diverse Viewpoints">
+  <meta property="og:title" content="SynCamMaster" />
+  <meta property="og:description" content="Creating synchronized multi-camera videos!" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="pics/icon.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="SynCamMaster">
+  <meta name="twitter:description" content="Creating synchronized multi-camera videos!">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="pics/icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>SynCamMaster: Synchronizing Multi-Camera Video Generation from Diverse Viewpoints</title>
+  <link rel="icon" type="image/x-icon" href="pics/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <img src="pics/icon.png" style="height:300px; margin-bottom: -90px; margin-top: -60px;"></img>
+            <h1 class="title is-2 publication-title">Synchronizing Multi-Camera Video Generation from Diverse Viewpoints</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://jianhongbai.github.io/">Jianhong Bai</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://menghanxia.github.io/">Menghan Xia</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://xinntao.github.io/">Xintao Wang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.ru/citations?user=fWxWEzsAAAAJ&hl=en">Ziyang Yuan</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://fuxiao0719.github.io/">Xiao Fu</a><sup>4</sup>,</span>
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://person.zju.edu.cn/en/lzz">Zuozhu Liu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://person.zju.edu.cn/en/huhaoji">Haoji Hu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a
+                  href="https://scholar.google.com/citations?user=P6MraaYAAAAJ&hl=en">Pengfei Wan</a><sup>2</sup>
+              </span>
+              <span class="author-block">
+                <a
+                  href="https://openreview.net/profile?id=~Di_ZHANG3">Di Zhang</a><sup>2</sup>
+              </span>
+            </div>
+            
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Zhejiang University,</span>&nbsp;
+              <span class="author-block"><sup>2</sup>Kuaishou Technology,</span>&nbsp;
+              <span class="author-block"><sup>3</sup>Tsinghua University,</span>&nbsp;
+              <span class="author-block"><sup>4</sup>CUHK</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"> 
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link
+                <span class="link-block">
+                  <a href="sm/supp.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <p class="prompt_single_vid"> -->
+  <section class="hero is-small" style="margin-top: -50px;">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-">
+            <h2 class="subtitle has-text-justified">
+              <b>TL;DR:</b> We propose SynCamMaster, an efficient method to lift pre-trained text-to-video models for open-domain multi-camera video generation from diverse viewpoints.
+            </h2>
+            <br>
+            <h2 class="title is-2">Demos</h2>
+            <h2 class="subtitle has-text-justified" style="line-height: 1.5;">
+                  <b>Text prompt:</b><br>
+                  <b>Row 1:</b> A hungry man enthusiastically devouring a steaming plate of spaghetti.<br>
+                  <b>Row 2:</b> A chef is expertly chopping onions in a well-equipped kitchen.<br>
+                  <b>Row 3:</b> A young and beautiful girl dressed in a pink dress, playing a grand piano.<br>
+                  <b>Row 4:</b> An elephant wearing a colorful birthday hat is walking along the sandy beach.
+            </h2>
+            <h1 class="title is-5 has-text-centered">Cameras with 30&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span></h1>
+            <div class="content has-text-justified">
+              <div style="text-align: center; margin-bottom: -28px; margin-top: -20px;"">
+                <img src="pics/az.png" width="25%" />
+              </div>
+            </div>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                  <source src="./videos/syncammaster/az30_teaser_compressed.mp4" type="video/mp4">
+                </video>
+              </td>
+            </div>
+
+            <p><br></p>
+
+            <h1 class="title is-5 has-text-centered">Cameras with Difference in <span style="color:rgb(241, 73, 177);">Distance</span></h1>
+            <div class="content has-text-justified">
+              <div style="text-align: center; margin-bottom: -28px; margin-top: -20px;"">
+                <img src="pics/dis.png" width="25%" />
+              </div>
+            </div>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                  <source src="./videos/syncammaster/dis_teaser_compressed.mp4" type="video/mp4">
+                </video>
+              </td>
+            </div>
+
+            <p><br></p>
+
+            <h1 class="title is-5 has-text-centered">Cameras with 15&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span></h1>
+            <div class="content has-text-justified">
+              <div style="text-align: center; margin-bottom: -28px; margin-top: -20px;"">
+                <img src="pics/el.png" width="25%" />
+              </div>
+            </div>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                  <source src="./videos/syncammaster/el15_teaser_compressed.mp4" type="video/mp4">
+                </video>
+              </td>
+            </div>
+
+            <p><br></p>
+
+            <h1 class="title is-5 has-text-centered">Cameras with 20&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span> and 10&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span></h1>
+            <div class="content has-text-justified">
+              <!-- <div style="text-align: left; margin-left: -10px; margin-bottom: -30px; margin-top: -20px;"> -->
+              <div style="text-align: center; margin-bottom: -28px; margin-top: -20px;"">
+                <img src="pics/combined.png" width="25%" />
+              </div>
+            </div>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <video muted autoplay="autoplay" loop="loop" width="100%" preload controls>
+                  <source src="./videos/syncammaster/combined_teaser_compressed.mp4" type="video/mp4">
+                </video>
+              </td>
+            </div>
+          </div>
+  </section>
+
+  <br>
+  <br>
+
+  <!-- Teaser video-->
+  <section class="hero teaser is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered has-text-centered">
+          <div class="column custom-width">
+            <br>
+            <h2 class="title is-2">More Results</h2>
+            <div class="content has-text-justified">
+              <div id="results-carousel" class="carousel results-carousel" align="center">
+                <div class="item item-video1">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <br>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 30&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/az30_4view/cut_meat_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A person slicing raw meat on a blue cutting board." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 30&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/az30_4view/outdoor_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A person is doing outdoor activities." </p>
+                            <br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+                <div class="item item-video2">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <br>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ Difference in <span style="color:rgb(241, 73, 177);">Distance</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/dis_4view/orange_car_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A sleek orange sports car on a long, straight track, its tires screeching as it accelerates, leaving behind a trail of smoke and dust." </p>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 15&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/el15_4view/riding_horse_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A horse and rider in motion along the shoreline of a beach." </p>
+                            <br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+                <div class="item item-video3" style="width: 50%; margin: 0 auto;">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <br>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 30&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/az30_2view/boy_eat_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A close-up view of a young Chinese child eating dumplings." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 30&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/az30_2view/sing_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A woman singing into a microphone while wearing a scarf." </p>
+                            <br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+                <div class="item item-video4">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <br>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 15&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/el15_4view/hair_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A woman getting her hair styled in a salon." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 15&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/el15_4view/cooking_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A man wearing a blue shirt and hat cooking in the kitchen." </p>
+                            <br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+                <div class="item item-video5">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <br>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 30&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/az30_4view/skating_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A person skating on inline rollerblades in an indoor rink." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 20&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span>, 10&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/combined_4view/gorilla_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A gorilla is sitting on the ground, holding the carrot and taking small bites." </p>
+                            <br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+                <div class="item item-video6">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <br>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 30&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/az30_4view/eagle_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A majestic eagle is soaring through the clear blue sky." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 15&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/el15_4view/pottery_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "The setting is a workshop or studio environment, with the focus on an individual engaged in pottery-making." </p>
+                            <br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+                <div class="item item-video7" style="width: 50%; margin: 0 auto;">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <!-- <br> -->
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ Difference in <span style="color:rgb(241, 73, 177);">Distance</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/dis_2view/boy_eat_apple_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A young boy eating an apple." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ Difference in <span style="color:rgb(241, 73, 177);">Distance</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/dis_2view/piano_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A person playing the piano." </p>
+                            <!-- <br> -->
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+
+                <div class="item item-video8">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <br>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 20&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span>, 10&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/combined_4view/onion_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A man is carefully slicing a red onion on a wooden cutting board, surrounded by various vegetables." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 20&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span>, 10&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/combined_4view/sing_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A woman singing into a microphone while wearing a scarf." </p>
+                            <br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+
+                <div class="item item-video9">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <br>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 20&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span>, 10&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/combined_4view/dog_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A close-up view of a small, fluffy dog in front of the camera." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 20&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span>, 10&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/combined_4view/gorilla_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A gorilla is sitting on the ground, holding the carrot and taking small bites." </p>
+                            <br>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+
+                <div class="item item-video10" style="width: 50%; margin: 0 auto;">
+                  <table width="900" align="center">
+                    <style>
+                      table, th, td {
+                        border: none;
+                      }
+                    </style>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <!-- <br> -->
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 20&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/el20_2view/salt_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A close-up of an individual's hand sprinkling salt over a sizzling pan filled with vegetables and spices." </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+                              <p>[ 30&deg; Difference in <span style="color: rgb(84, 151, 233);">Azimuth</span>, 15&deg; Difference in <span style="color: rgb(253, 60, 94);">Elevation</span> ]</p>
+                            </div>
+                            <video src="./videos/syncammaster/az30_el15_2view/guitar_compressed.mp4"
+                                autoplay loop controls muted></video>
+                            <p class="prompt_single_vid"> "A person with long, dark hair wearing a maroon sweater is playing an acoustic guitar." </p>
+                            <!-- <br> -->
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+
+
+  <!-- Paper abstract -->
+  <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-2">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Recent advancements in video diffusion models have shown exceptional abilities in simulating real-world dynamics and maintaining 3D consistency. This progress inspires us to investigate the potential of these models to ensure dynamic consistency across various viewpoints, a highly desirable feature for applications such as virtual filming. Unlike existing methods focused on multi-view generation of single objects for 4D reconstruction, our interest lies in generating open-world videos from arbitrary viewpoints, incorporating 6 DoF camera poses.
+              To achieve this, we propose a plug-and-play module that enhances a pre-trained text-to-video model for multi-camera video generation, ensuring consistent content across different viewpoints. Specifically, we introduce a multi-view synchronization module to maintain appearance and geometry consistency across these viewpoints. Given the scarcity of high-quality training data, we also design a progressive training scheme that leverages multi-camera images and monocular videos as a supplement to Unreal Engine-rendered multi-camera videos. This comprehensive approach significantly benefits our model. Furthermore, our method enables intriguing extensions, such as re-rendering a video from multiple novel viewpoints.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+
+  <!-- Paper poster -->
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-">
+            <h2 class="title is-2">Method</h2>
+            <div class="content has-text-justified">
+              <td colspan="3">
+                <p>
+                  To synthesis multi-camera synchronized videos based on the pre-trained text-to-video model, two components are newly introduced: the camera encoder projects the relative camera extrinsic parameters into embedding space; the inter-view synchronization module, as plugged in each Transformer block, modulates inter-view features under the guidance of inter-camera relationship. Only new components are trainable, while the pre-trained text-to-video model remains frozen.
+                </p>
+              </td>
+            </div>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <img src="pics/fig_pipe.jpg" width="100%" />
+              </td>
+            </div>
+            <p><br></p>
+          </div>
+  </section>
+  <!--End paper poster -->
+
+
+  <!-- Video grid single ref -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column custom-width">
+            <h2 class="title is-2">Comparisons</h2>
+
+            <div class="content has-text-justified my_link">
+              <td colspan="3">
+                <p>
+                  To the best of our knowledge, multi-view real-world video generation has not been explored by previous works. To this end, we establish baseline approaches by first extracting the first frame of each view generated by SynCamMaster, and then feeding them into 1) image-to-video (I2V) generation method, i.e., SVD-XT <a href="#ref-svdxt">[1]</a> 2) state-of-the-art single-video camera control approach MotionCtrl <a href="#ref-motionctrl">[2]</a> based on SVD and CameraCtrl <a href="#ref-cameractrl">[3]</a> based on SVD-XT. Furthermore, we additionally train an I2V generation model based on the same T2V model used by SynCamMaster, denote as 'I2V-Ours'.
+                </p>
+                <!-- <p><br></p> -->
+              </td>
+              
+
+
+            <table>
+              <tbody>
+                <th style="font-size: 16px; text-align: center; width: 4.6%; padding: 0 0px;"></th>
+                <th style="font-size: 16px; text-align: center; width: 45%; padding: 0 2px;">Viewpoint 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Viewpoint 2</th>
+                <th style="font-size: 16px; text-align: center; width: 45%; padding: 0 2px;">Viewpoint 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Viewpoint 2</th>
+                <tr>
+                  <td style="width: 4.6%; padding: 0 0px;">
+                    <img src="./videos/comparison/caption.png" style="float: left; width: 100%;">
+                  </td>
+                  <td style="width: 45%; padding: 0 2px;">
+                    <video src="./videos/comparison/comparison1.mp4" autoplay loop controls muted style="width: 100%;"></video>
+                    <p class="prompt_single_vid"> "An elephant wearing a colorful birthday hat is walking along the sandy beach." </p>
+                  </td>
+                  <td style="width: 45%; padding: 0 2px;">
+                    <video src="./videos/comparison/comparison2.mp4" autoplay loop controls muted style="width: 100%;"></video>
+                    <p class="prompt_single_vid"> "A blue bus drives across the iconic Tower Bridge in London." </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="content has-text-justified my_link">
+              <td colspan="3">
+                <p>
+                  We use SynCamMaster to synthesize the baseline methods' reference images since they cannot generate videos from various viewpoints.
+                </p>
+                <!-- <p><br></p> -->
+              </td>
+            <p><br></p>
+
+          </div>
+        </div>
+  </section>
+
+  <br>
+  <br>
+
+
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-">
+
+            <h2 class="title is-2">SynCamMaster + <a href="#ref-4dgs">4DGS*</a></h2>
+            
+
+            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+              <p><b>4D Reconstruction with the 4-view videos synthesized by SynCamMaster</b></p>
+            </div>
+            <br>
+            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+              <p>Input Views</p>
+            </div>
+            <video src="./videos/syncammaster/4D_reconstruction/woman_dance.mp4"
+                autoplay loop controls muted></video>
+            <p class="prompt_single_vid"> "A young woman stands in the middle of a city street, joyfully raising her arms, suggesting she is dancing or celebrating." </p>
+            <p><br></p>
+
+            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+              <p>Rendered Video</p>
+            </div>
+            <video src="./videos/syncammaster/4D_reconstruction/woman_dance_rendered.mp4"
+            autoplay loop controls muted></video>
+            <p class="subtitle has-text-left"> Note: As noted in the 4DGS <a href="#ref-4dgs">[4]</a> paper, 4DGS struggles to optimize videos with large-scale motion. Therefore, we selected cases with limited dynamic range for 4D reconstruction. In the case, the woman is slowly rising from a semi-squat position.</p>
+            <p><br></p>
+            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+              <p><b>4D Reconstruction with the 4-view videos (ground truth) from the Plenoptic Dataset</b></p>
+            </div>
+            <br>
+            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+              <p>Input Views</p>
+            </div>
+            <video src="./videos/syncammaster/4D_reconstruction/coffee.mp4"
+                autoplay loop controls muted></video>
+            <p><br></p>
+
+            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
+              <p>Rendered Video</p>
+            </div>
+            <video src="./videos/syncammaster/4D_reconstruction/coffee_rendered.mp4"
+            autoplay loop controls muted></video>
+            
+            <p><br></p>
+
+            
+
+
+          </div>
+
+  </section>
+
+  
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column custom-width">
+            <!-- <h2 class="title is-2"></h2> -->
+            <div class="content has-text-justified">
+              <p>
+                <a name="ref-svdxt" id="ref-svdxt"></a>
+                [1] Blattmann, Andreas, et al. "Stable video diffusion: Scaling latent video diffusion models to large datasets." arXiv preprint arXiv:2311.15127 (2023).
+              </p>
+              <p>
+                <a name="ref-motionctrl" id="ref-motionctrl"></a>
+                [2] Wang, Zhouxia, et al. "Motionctrl: A unified and flexible motion controller for video generation." ACM SIGGRAPH 2024 Conference Papers. 2024.
+              </p>
+              <p>
+                <a name="ref-cameractrl" id="ref-cameractrl"></a>
+                [3] He, Hao, et al. "Cameractrl: Enabling camera control for text-to-video generation." arXiv preprint arXiv:2404.02101 (2024).
+              </p>
+
+              <p>
+                <a name="ref-4dgs" id="ref-4dgs"></a>
+                [4] Wu, Guanjun, et al. "4d gaussian splatting for real-time dynamic scene rendering." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2024.
+              </p>
+              <p>
+                * We thank <a rel="license"
+                href="https://guanjunwu.github.io/" target="_blank" color="blue">Guanjun Wu</a> and Jiangnan Ye for their help on running 4DGS.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+
+                <p>
+                  This page was built using the <a
+                    href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                    Project Page Template</a> and <a href="https://diffusion-tokenflow.github.io/">TokenFlow</a>.
+                  <br> This website is licensed under a <a rel="license"
+                    href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Statcounter tracking code -->
+
+      <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+      <!-- End of Statcounter Code -->
+      <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+          const videoWrappers = document.querySelectorAll('.video-wrapper');
+
+          videoWrappers.forEach(wrapper => {
+            const defaultVideo = wrapper.querySelector('.default-video');
+            const aspectRatio = defaultVideo.videoWidth / defaultVideo.videoHeight;
+            const height = wrapper.offsetWidth / aspectRatio;
+
+            wrapper.style.height = `${height}px`;
+
+            wrapper.addEventListener('mouseenter', () => {
+              defaultVideo.pause();
+              hoverVideo.play();
+            });
+
+            wrapper.addEventListener('mouseleave', () => {
+              defaultVideo.play();
+              hoverVideo.pause();
+            });
+          });
+        });
+        $(document).ready(function () {
+          var carouselItems = $('.carousel .item');
+          var numItems = carouselItems.length;
+          var numVideos = 5;
+          var currentIndex = 0;
+
+          $('.carousel').on('click', function () {
+            currentIndex++;
+            if (currentIndex + numVideos <= numItems) {
+              carouselItems.removeClass('active');
+              carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+            } else {
+              currentIndex = 0;
+              carouselItems.removeClass('active');
+              carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+            }
+          });
+
+          carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+        });
+      </script>
+    </div>
+  </section>
+</body>
+
+</html>
