@@ -46,7 +46,7 @@
 
 <body>
 
-
+121
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -106,23 +106,23 @@
                   </a>
                 </span>
 
-                <!-- Supplementary PDF link
-                <span class="link-block">
-                  <a href="sm/supp.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Supplementary</span>
-                  </a>
-                </span> -->
-
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/KwaiVGI/SynCamMaster" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- Hugging Face Demo link with an image icon -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/KwaiVGI/SynCamVideo-Dataset/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="pics/hf.png" alt="Dataset">
+                    </span>
+                    <span>Dataset</span>
                   </a>
                 </span>
 
@@ -142,6 +142,13 @@
             <h2 class="subtitle has-text-justified">
               <b>TL;DR:</b> We propose SynCamMaster, an efficient method to lift pre-trained text-to-video models for open-domain multi-camera video generation from diverse viewpoints.
             </h2>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <video autoplay="autoplay" loop="loop" width="100%" preload controls>
+                  <source src="./videos/syncammaster/video.mp4" type="video/mp4">
+                </video>
+              </td>
+            </div>
             <br>
             <h2 class="title is-2">Demos</h2>
             <h2 class="subtitle has-text-justified" style="line-height: 1.5;">
@@ -682,70 +689,10 @@
                 </p>
                 <!-- <p><br></p> -->
               </td>
-            <p><br></p>
-
+              <hr>
           </div>
         </div>
   </section>
-
-  <br>
-  <br>
-
-
-  <section class="hero is-light">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-">
-
-            <h2 class="title is-2">SynCamMaster + <a href="#ref-4dgs">4DGS*</a></h2>
-            
-
-            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
-              <p><b>4D Reconstruction with the 4-view videos synthesized by SynCamMaster</b></p>
-            </div>
-            <br>
-            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
-              <p>Input Views</p>
-            </div>
-            <video src="./videos/syncammaster/4D_reconstruction/woman_dance.mp4"
-                autoplay loop controls muted></video>
-            <p class="prompt_single_vid"> "A young woman stands in the middle of a city street, joyfully raising her arms, suggesting she is dancing or celebrating." </p>
-            <p><br></p>
-
-            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
-              <p>Rendered Video</p>
-            </div>
-            <video src="./videos/syncammaster/4D_reconstruction/woman_dance_rendered.mp4"
-            autoplay loop controls muted></video>
-            <p class="subtitle has-text-left"> Note: As noted in the 4DGS <a href="#ref-4dgs">[4]</a> paper, 4DGS struggles to optimize videos with large-scale motion. Therefore, we selected cases with limited dynamic range for 4D reconstruction. In the case, the woman is slowly rising from a semi-squat position.</p>
-            <p><br></p>
-            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
-              <p><b>4D Reconstruction with the 4-view videos (ground truth) from the Plenoptic Dataset</b></p>
-            </div>
-            <br>
-            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
-              <p>Input Views</p>
-            </div>
-            <video src="./videos/syncammaster/4D_reconstruction/coffee.mp4"
-                autoplay loop controls muted></video>
-            <p><br></p>
-
-            <div style="text-align:center; margin-top: 0px; margin-bottom: 0px;" class="subtitle has-text-centered">
-              <p>Rendered Video</p>
-            </div>
-            <video src="./videos/syncammaster/4D_reconstruction/coffee_rendered.mp4"
-            autoplay loop controls muted></video>
-            
-            <p><br></p>
-
-            
-
-
-          </div>
-
-  </section>
-
   
   <section class="hero is-small">
     <div class="hero-body">
@@ -753,31 +700,38 @@
         <div class="columns is-centered has-text-centered">
           <div class="column custom-width">
             <!-- <h2 class="title is-2"></h2> -->
-            <div class="content has-text-justified">
-              <p>
-                <a name="ref-svdxt" id="ref-svdxt"></a>
-                [1] Blattmann, Andreas, et al. "Stable video diffusion: Scaling latent video diffusion models to large datasets." arXiv preprint arXiv:2311.15127 (2023).
-              </p>
-              <p>
-                <a name="ref-motionctrl" id="ref-motionctrl"></a>
-                [2] Wang, Zhouxia, et al. "Motionctrl: A unified and flexible motion controller for video generation." ACM SIGGRAPH 2024 Conference Papers. 2024.
-              </p>
-              <p>
-                <a name="ref-cameractrl" id="ref-cameractrl"></a>
-                [3] He, Hao, et al. "Cameractrl: Enabling camera control for text-to-video generation." arXiv preprint arXiv:2404.02101 (2024).
-              </p>
+            <div class="content has-text-justified" style="margin-top: -50px;">
+              
+              <b>Awesome Related Works:</b> <br><a rel="license"
+              href="http://fuxiao0719.github.io/projects/3dtrajmaster" target="_blank" color="blue">3DTrajMaster</a>: control multiple entity motions in 3D space (6DoF) for text-to-video generation.
+              <br><a rel="license"
+              href="https://zixuan-ye.github.io/stylemaster.github.io" target="_blank" color="blue">StyleMaster</a>: enable artistic video generation and translation with reference style image.
+              <br><a rel="license"
+              href="https://gcd.cs.columbia.edu" target="_blank" color="blue">GCD</a>: synthesize large-angle novel viewpoints of 4D dynamic scenes from a monocular video.
+              <br><a rel="license"
+              href="https://collaborativevideodiffusion.github.io" target="_blank" color="blue">CVD</a>: multi-view video generation with multiple camera trajectories.
+              <br><a rel="license"
+              href="https://sv4d.github.io" target="_blank" color="blue">SV4D</a>: multi-view consistent dynamic 3D content generation.</p>
 
-              <p>
+              <b>Reference:</b> <br>
+                <a name="ref-svdxt" id="ref-svdxt"></a>
+                [1] Blattmann, Andreas, et al. "Stable video diffusion: Scaling latent video diffusion models to large datasets." arXiv preprint arXiv:2311.15127 (2023).<br>
+
+                <a name="ref-motionctrl" id="ref-motionctrl"></a>
+                [2] Wang, Zhouxia, et al. "Motionctrl: A unified and flexible motion controller for video generation." ACM SIGGRAPH 2024 Conference Papers. 2024.<br>
+                <a name="ref-cameractrl" id="ref-cameractrl"></a>
+                [3] He, Hao, et al. "Cameractrl: Enabling camera control for text-to-video generation." arXiv preprint arXiv:2404.02101 (2024).<br>
                 <a name="ref-4dgs" id="ref-4dgs"></a>
                 [4] Wu, Guanjun, et al. "4d gaussian splatting for real-time dynamic scene rendering." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2024.
-              </p>
-              <p>
-                * We thank <a rel="license"
-                href="https://guanjunwu.github.io/" target="_blank" color="blue">Guanjun Wu</a> and Jiangnan Ye for their help on running 4DGS.</p>
+                <br>
+                <br>
+                <b>Acknowledgments:</b> <br>We thank Jinwen Cao, Yisong Guo, Haowen Ji, Jichao Wang, and Yi Wang from Kuaishou Technology for their invaluable help in constructing the <a rel="license" href="https://huggingface.co/datasets/KwaiVGI/SynCamVideo-Dataset" target="_blank" color="blue">SynCamVideo-Dataset</a>. We thank <a rel="license" href="https://guanjunwu.github.io/" target="_blank" color="blue">Guanjun Wu</a> and Jiangnan Ye for their help on running 4DGS.
             </div>
           </div>
         </div>
       </div>
+    </section>
+
       <footer class="footer">
         <div class="container">
           <div class="columns is-centered">
@@ -848,7 +802,7 @@
         });
       </script>
     </div>
-  </section>
+  
 </body>
 
 </html>
