@@ -1,1 +1,1 @@
-# SynCamMaster.github.io
+# jianhongbai.github.io/SynCamMaster/
