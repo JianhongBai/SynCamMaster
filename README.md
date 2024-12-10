@@ -1,1 +1,1 @@
-# jianhongbai.github.io/SynCamMaster/
+# [jianhongbai.github.io/SynCamMaster/](https://jianhongbai.github.io/SynCamMaster/)
